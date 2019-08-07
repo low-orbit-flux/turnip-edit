@@ -51,10 +51,10 @@ def dirlist2 (dir, filter):
     for i in files:
         m = re.search (filter, i)
         if m:
-            output += "<tr><td onclick=\ "openMyFile("" + dir + "/" + i + "')\">" + i + "</td></tr>"
+            output += "<tr><td onclick=\ "openMyFile('" + dir + "/" + i + "')\">" + i + "</td></tr>"
        else:
            for i in files:
-               output += "<tr><td onclick=\ "openMy File('" + dir + "/"+i+ "')\">" + i + "</td></tr>"
+               output += "<tr><td onclick=\ "openMyFile('" + dir + "/"+i+ "')\">" + i + "</td></tr>"
     return output
 
 @app.route ( "/openmyfile/', method s = [ ' POST'])
