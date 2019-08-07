@@ -5,36 +5,38 @@
 <script src="/w3Syntax.js"></script>
 <script>
 function mysave()
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200)
-document.getElementById ("status1" ).innerHTML = this.responseText;
-xhttp.open ("POST", "/save/", true); // Async !!!
-xhttp.setRequestHeader ("Content-type", "application/x - Www-form- urlencoded ") ; // for post
-xhttp.send ("path=" + document.getElementById ("f1'").value + "&content=" +
-document.getElement ById ( "d1") . value) ;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200)
+            document.getElementById ("status1" ).innerHTML = this.responseText;
+        }
+    }
+    xhttp.open("POST", "/save/", true); // Async !!!
+    xhttp.setRequestHeader("Content-type", "application/x - Www-form- urlencoded ") ; // for post
+    xhttp.send("path=" + document.getElementById("f1'").value + "&content=" + document.getElementById("d1").value);
 function projectDirselect () {
-//alert ( "HelLo! I am an alert box!! ")3
-var xhttp new XMLHttpRequest () s
-xhttp.onreadystatechange = function () {
-if (this.readyState == 4 && this.status == 200) {
-document.getElementById ("file_list_table").innerHTML = this.responseText;
-xhttp.open ( "POST", "/dirlist/", true); // Async !!!
-xhttp.setRequestHeader("Content-type", "application/x-www-form- urlencoded") ; // for post?
-xhttp.send ( "project_dir_selector=" +
-document.getElementById ("project_dir_selector"). value + "&filter=" -
-document.getElementById ("filter1").value);
+    //alert ( "HelLo! I am an alert box!! ")3
+    var xhttp new XMLHttpRequest ();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById ("file_list_table").innerHTML = this.responseText;
+        }
+    }
+    xhttp.open( "POST", "/dirlist/", true); // Async !!!
+    xhttp.setRequestHeader("Content-type", "application/x-www-form- urlencoded") ; // for post?
+    xhttp.send( "project_dir_selector=" + document.getElementById ("project_dir_selector"). value + "&filter=" + document.getElementById ("filter1").value);
 function openMy File(file) {
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-if (this.readyState == 4 && this.status = = 200) {
-document.getElementById ("f1").value = file;
-document.getElementById ("d1"). value = this.nesponseText; // .value instead of
-.innerHTML (otherwise won 't always update )
-document.getElementById("status1").innerHTML =
-xhttp.0pen ("POST", "/openmyfile/", true); // Async !!!
-xhttp.set RequestHeader ( "Content-type", "application/x-www-form-urlencoded"); // for post?
-xhttp.send ("path=" + file);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status = = 200) {
+            document.getElementById ("f1").value = file;
+            document.getElementById ("d1"). value = this.nesponseText; // .value instead of .innerHTML (otherwise won 't always update )
+        }
+    }
+    document.getElementById("status1").innerHTML = xhttp.open ("POST", "/openmyfile/", true); // Async !!!
+    xhttp.set RequestHeader ( "Content-type", "application/x-www-form-urlencoded"); // for post?
+    xhttp.send ("path=" + file);
+
 function myFormat(tag, input) {
 //var res = input.replace (/microsoft/i, "W3Schoo ls ");
 newstring = document.getElementById ("d1").value // keep it the same
