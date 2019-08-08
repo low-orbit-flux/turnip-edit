@@ -72,7 +72,7 @@ def edit() :
     f1.close()
 
     d = dirlist2(PROJECT_DIR_FIRST, "")
-    output = re.sub(r'<!-- PROJECT_DIRS_LIST -->', PR0JECT_DIRS_LIST, output)
+    output = re.sub(r'<!-- PROJECT_DIRS_LIST -->', PROJECT_DIRS_LIST, output)
     output = re.sub(r'<th><td>---</td></th>', d, output)
 
     datal = ""
