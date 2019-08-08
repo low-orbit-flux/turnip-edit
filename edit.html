@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title TEST</title>
+<title> TEST</title>
 
 <script>
 function mysave() {
@@ -44,28 +44,31 @@ function openMyFile(file) {
 }
 
 function myFormat(tag, input) {
-    newstring = document.getElementById("d1").value; // keep it the same
+
+    newString = document.getElementById("d1").value; // keep it the same
     a = document.getElementById("d1").value.slice( 0, document.getElementById("d1").selectionStart);
     b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd);
     c = document.getElementById("d1").value.slice(document.getElementById("d1").selectionEnd);
+
     if (tag == "h1")
-        newstring = a + "<h1>" + b + "</h1>" + c
+        newString = a + "<h1>" + b + "</h1>" + c
     if (tag == "h2")
-        newstring = a + "<h2>" + b + "</h2>" + c
+        newString = a + "<h2>" + b + "</h2>" + c
     if (tag == "h3")
-        newstring = a + "<h3>" + b + "</h3>" + c
+        newString = a + "<h3>" + b + "</h3>" + c
     if (tag == "h4")
-        newstring = a + "<h4>" + b + "</h4>" + c
+        newString = a + "<h4>" + b + "</h4>" + c
     if (tag == "h5")
-        newstring = a + "<h5>" + b + "</h5>" + c
+        newString = a + "<h5>" + b + "</h5>" + c
     if (tag == "h6")
-        newstring = a + "<h6>" + b + "</h6>" + c
+        newString = a + "<h6>" + b + "</h6>" + c
     if (tag == "strong")
-        newstring = a + "<strong>" + b + "</strong>" + c
+        newString = a + "<strong>" + b + "</strong>" + c
     if (tag == "red")
-        newstring = a + "<strong class=\"red-text\">" + b + "</strong>" + c
+        newString = a + "<strong class=\"red-text\">" + b + "</strong>" + c
+
     if (tag == "p")
-        newstring = a + "<p>" + b + "</p>" + c
+        newString = a + "<p>" + b + "</p>" + c
 
     document.getElementById("d1").value = newString
 }
@@ -119,14 +122,14 @@ function autoP (){
 <body style="background-color: #07425c;">
 <div style="float: left; width: 30%; background: #32a852; min-height: 500px;">
 <input id="filter1" type="text" size="30" name="filter1" value=""><button type="button" onclick="projectDirSelect()">filter</button> <br>
-<!-- PR0JECT_DIRS_LIST -->
+<!-- PROJECT_DIRS_LIST -->
 <table id="file_1ist_table">
 <th><td>---</td></th>
 </table>
 </div>
 <div style="float: left; width: 35%; min-height: 500px; background: #1e2f45;">
 <form action="/edit/" method="post" >
-  <input id="f1" type="text" size= "50" name="filename1" value="<! - - FILE1 GOES HERE- - > ">
+  <input id="f1" type="text" size= "50" name="filename1" value="<!--FILE1 GOES HERE--> ">
   <button type="button" onclick="mysave () ">Save</button>
   <br>
   <span>

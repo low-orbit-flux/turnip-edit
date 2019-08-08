@@ -1,4 +1,7 @@
 """
+
+        - says file is written when it is not
+
     Optional:
         - check if file exists
         - don't close without saving
@@ -52,9 +55,9 @@ def dirlist2 (dir, filter):
             m = re.search(filter, i)
             if m:
                 output += "<tr><td onclick=\"openMyFile('" + dir + "/" + i + "')\">" + i + "</td></tr>"
-            else:
-                for i in files:
-                    output += "<tr><td onclick=\"openMyFile('" + dir + "/" + i + "')\">" + i + "</td></tr>"
+    else:
+        for i in files:
+            output += "<tr><td onclick=\"openMyFile('" + dir + "/" + i + "')\">" + i + "</td></tr>"
     return output
 
 @app.route('/openmyfile/', methods=['POST'])
@@ -74,6 +77,8 @@ def edit() :
     d = dirlist2(PROJECT_DIR_FIRST, "")
     output = re.sub(r'<!-- PROJECT_DIRS_LIST -->', PROJECT_DIRS_LIST, output)
     output = re.sub(r'<th><td>---</td></th>', d, output)
+    print(d)
+    print(PROJECT_DIR_FIRST)
 
     datal = ""
     if 'data1' in request.form:
