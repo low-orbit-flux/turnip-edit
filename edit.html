@@ -2,161 +2,159 @@
 <html>
 <head>
 <title TEST</title>
-<script src="/w3Syntax.js"></script>
+
 <script>
-function mysave()
+function mysave() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200)
-            document.getElementById ("status1" ).innerHTML = this.responseText;
-        }
-    }
-    xhttp.open("POST", "/save/", true); // Async !!!
-    xhttp.setRequestHeader("Content-type", "application/x - Www-form- urlencoded ") ; // for post
-    xhttp.send("path=" + document.getElementById("f1'").value + "&content=" + document.getElementById("d1").value);
-function projectDirselect () {
-    //alert ( "HelLo! I am an alert box!! ")3
-    var xhttp new XMLHttpRequest ();
-    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById ("file_list_table").innerHTML = this.responseText;
+            document.getElementById("status1").innerHTML = this.responseText;
         }
-    }
-    xhttp.open( "POST", "/dirlist/", true); // Async !!!
-    xhttp.setRequestHeader("Content-type", "application/x-www-form- urlencoded") ; // for post?
-    xhttp.send( "project_dir_selector=" + document.getElementById ("project_dir_selector"). value + "&filter=" + document.getElementById ("filter1").value);
-function openMy File(file) {
+    };
+    xhttp.open("POST", "/save/", true); // Async !!!
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // for post
+    xhttp.send("path=" + document.getElementById("f1").value + "&content=" + document.getElementById("d1").value);
+}
+
+function projectDirselect() {
+    //alert ( "HelLo! I am an alert box!! ")3
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status = = 200) {
-            document.getElementById ("f1").value = file;
-            document.getElementById ("d1"). value = this.nesponseText; // .value instead of .innerHTML (otherwise won 't always update )
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("file_list_table").innerHTML = this.responseText;
         }
-    }
-    document.getElementById("status1").innerHTML = xhttp.open ("POST", "/openmyfile/", true); // Async !!!
-    xhttp.set RequestHeader ( "Content-type", "application/x-www-form-urlencoded"); // for post?
-    xhttp.send ("path=" + file);
+    };
+    xhttp.open("POST", "/dirlist/", true); // Async !!!
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // for post?
+    xhttp.send("project_dir_selector=" + document.getElementById("project_dir_selector").value + "&filter=" + document.getElementById("filter1").value);
+}
+
+function openMyFile(file) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("f1").value = file;
+            document.getElementById("d1").value = this.responseText; // .value instead of .innerHTML (otherwise won 't always update )
+            document.getElementById("status1").innerHTML = "...";
+        }
+    };
+    xhttp.open("POST", "/openmyfile/", true); // Async !!!
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // for post?
+    xhttp.send("path=" + file);
+}
 
 function myFormat(tag, input) {
-//var res = input.replace (/microsoft/i, "W3Schoo ls ");
-newstring = document.getElementById ("d1").value // keep it the same
-a = document.getElementById ("d1").value.slice( 0,
-document.getElementById ("d1"). selectionStart)
-b document. getElementById ("d1") . value. slice(
-document.getElementById ("d1").selectionStart,
-document.getElementById ("d1").selection End)
-C = document. getElementById("d1").value. slice(
-document.getElementById ("d1") .selectionEnd)
-if (tag == "hi")
-newstring = a+ "<h1>" + b + "</h1>" + C
-newstring = a+"<h2>" + b+ "</h2>" + C
-newstring = a +"<h3>"+ b +"</h3>" + c
-newstring = a+"<h4>" + b+"</h4>" + C
-newstring = a+"<h5>" + b+ "</h5>"+C
-newstring = a+"<h6>" + b+"</h6>" +C
-newstring = a +"<strong> "+ b + "</strong>" + C
-newstring = a +"<strong class=\"red-text\">" +b+ "</strong> +C
-if (tag == "h2")
-if (tag == "h3")
-if (tag == "h4")
-if (tag == "h5")
-if (tag == "h6")
-if (tag == "strong")
-if (tag == "red")
-if (tag == "p")
-newstring = a+"<p>" + b +"</p>"+C
-document.getElementById ("d1") .value = newString
-function myFormatList (tag, input) {
-newstring =document.getElementById ( "d1").value // keep it the same
-a = document.getElementById ( "d1").value.slice( 0,
-document.getElementById ("d1'").selectionStart)
-b document.getElementById ("d1").value.slice(
-document.getElementById ( "d1") . selectionStart,
-document.getElementById ( "d1"). selection End)
-C document. getElementById("d1").value. slice(
-document.getElementById ("di").selectionEnd)
-<li>");
-var b = b.replace (/\n/gm, "</li>\n
-var b = b.replace(/^/,
-var b b.replace (/$/, "</li> ");
-<li>");
-if (tag == "ul")
-newstring = a +"<ul> \n" + b+ "\n</ul>" + C
-newstring = a+ "<ol> \n" + b +"\n</ol> "+ C
-document.getElementById ( "d1"). value = newstring
-else if (tag == "ol")
-function previewMe () {
-doc ument.getElementById ("d1").value;
-document.getElementById ( "preview2") . innerHTML =
-function justATag (tag) {
-newstring = document. getElementById ("d1").value / keep it the s ame
-a = document.getElementById ("d1").value.slice( 0,
-document.getElementById ( "d1").selectionStart)
-b document.get ElementById ("d1").value.slice(
-document.getElementById ("d1").selectionStart,
-document.getElementById ( "di").selection End)
-C= document.getElementById ("di").value.slice
-document.getElementById ("d1").selectionEnd)
-if (tag = "link")
-newstring = a+"<a href=\"\"></a>"+C
-else if (tag == "image")
-newstring = a +"<img src=\"\" alt-\"\">" + c
-else if (tag == "il")
-newString = a + "<a href=\"\"><img src=\ "\" alt=\"\"></a>" + C
-document.getElementById ("di") .value = newstring
+    newstring = document.getElementById("d1").value; // keep it the same
+    a = document.getElementById("d1").value.slice( 0, document.getElementById("d1").selectionStart);
+    b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd);
+    c = document.getElementById("d1").value.slice(document.getElementById("d1").selectionEnd);
+    if (tag == "h1")
+        newstring = a + "<h1>" + b + "</h1>" + c
+    if (tag == "h2")
+        newstring = a + "<h2>" + b + "</h2>" + c
+    if (tag == "h3")
+        newstring = a + "<h3>" + b + "</h3>" + c
+    if (tag == "h4")
+        newstring = a + "<h4>" + b + "</h4>" + c
+    if (tag == "h5")
+        newstring = a + "<h5>" + b + "</h5>" + c
+    if (tag == "h6")
+        newstring = a + "<h6>" + b + "</h6>" + c
+    if (tag == "strong")
+        newstring = a + "<strong>" + b + "</strong>" + c
+    if (tag == "red")
+        newstring = a + "<strong class=\"red-text\">" + b + "</strong>" + c
+    if (tag == "p")
+        newstring = a + "<p>" + b + "</p>" + c
+
+    document.getElementById("d1").value = newString
+}
+
+function myFormatList(tag, input) {
+    newstring =document.getElementById ( "d1").value // keep it the same
+    a = document.getElementById("d1").value.slice(0, document.getElementById("d1").selectionStart)
+    b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd)
+    c = document.getElementById("d1").value.slice(document.getElementById ("di").selectionEnd)
+
+    var b = b.replace(/\n/gm, "</li>\n    <li>");
+    var b = b.replace(/^/, "    <li>");
+    var b = b.replace(/$/, "</li> ");
+
+    if (tag == "ul")
+        newstring = a + "<ul>\n" + b + "\n</ul>" + c
+    else if (tag == "ol")
+        newstring = a + "<ol>\n" + b + "\n</ol>" + c
+
+    document.getElementById("d1").value = newstring
+}
+
+function previewMe() {
+    document.getElementById("preview2").innerHTML = document.getElementById("d1").value;
+}
+
+function justATag(tag) {
+    newstring = document.getElementById ("d1").value // keep it the same
+    a = document.getElementById("d1").value.slice(0, document.getElementById("d1").selectionStart)
+    b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd)
+    c = document.getElementById("d1").value.slice(document.getElementById("d1").selectionEnd)
+    if (tag = "link")
+        newString = a + "<a href=\"\"></a>" + c
+    else if (tag == "image")
+        newString = a +"<img src=\"\" alt=\"\">" + c
+    else if (tag == "il")
+        newString = a + "<a href=\"\"><img src=\"\" alt=\"\"></a>" + c
+    document.getElementById("d1").value = newString
+}
+
 function autoP (){
-newstring = document. getElementById ("di").value // keep it the same
-newstring = newstring.replace(/\n[a-zA-Z0-9 ]{100,}\n/gm, function (m) { m =
-m.replace(/\n/g,""); return '\n<p> +m+'</p>\n'S);
-newstring = newstring.replace(/^[a - zA-ze-9 ]{100,}\n/g, function (m) {m =
-m.replace(/\n/g,"");return' \n<p>" +m+</p>\n' )
-newstring = newstring.replace (/\n[a- zA-ze-9 ]{100, }$/g, function (m) { m
-m.replace(/\n/g, ""); return '\n<p> '+m+</p>\n's})s
-document.getElementById("d1") .value = newstring
+    newstring = document.getElementById("d1").value // keep it the same
+    newstring = newstring.replace(/\n[a-zA-Z0-9 ]{100,}\n/gm, function(m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+    newstring = newstring.replace(/^[a-zA-Z0-9 ]{100,}\n/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+    newstring = newstring.replace(/\n[a-zA-Z0-9 ]{100,}$/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+    document.getElementById("d1").value = newString
+}
+
 </script>
 </head>
-<body style= "background - color: #07425c; ">
-<div style="float: left; idth: 30%; background: # 32a852; min - height: 508px; ">
-<input id="filter1" type="text" size="30" name="filter1" value=""><button type= "button"
-onclick="projectDirSelect () ">filter</button> <br>
-<!-PR0JECT_DIRS_LIST ->
+<body style="background-color: #07425c;">
+<div style="float: left; width: 30%; background: #32a852; min-height: 500px;">
+<input id="filter1" type="text" size="30" name="filter1" value=""><button type="button" onclick="projectDirSelect()">filter</button> <br>
+<!-- PR0JECT_DIRS_LIST -->
 <table id="file_1ist_table">
-<th><td> - - - </td></th>
-</tabley
+<th><td>---</td></th>
+</table>
 </div>
-<div style="float: left; width: 35%; min-height: 500px; background: #1e2f45; ">
+<div style="float: left; width: 35%; min-height: 500px; background: #1e2f45;">
 <form action="/edit/" method="post" >
-<input id="f1" type="text" size= "50" name="filename1" value="<! - - FILE1 GOES HERE- - > ">
-<button type="button" onclick="mysave () ">Save</button>
-<br>
-<span>
-<button type="button" onclick="my Format("h1') ">H1</button>
-<button type= "button" onclick="myFormat ( 'h2') ">H2</button>
-<button type= "button" onclick="myFormat ("h3") ">H3</button>
-kbutton type-"button onclicke"myFormat(h4)"H4</button>
-<button type= "button" onclick="myFormat ("h5')">H5</button>
-<button type= "button" onclick="myFormat ("h6')">H6</button>
-<button type="button'" onclick= "myFormat ( " strong') ">B</button>
-<button type="button'" onclick="myFormat ( "red ') ">Red</button>
-<button type="button'" onclick="myFormatList('ul') ">UL</button >
-<button type="button'" onclick="myFormatList('ol') ">OL</button>
-<button type="button" onclick="justATag("link") ">Link</button>
-<button type="button" onclick"justATag( image')">Img</button>
-<button type="button" onclick="justATag( "il')">I/L</button>
-<button type="button" onclick="my Format ("p' ) ">P</button>
-<button type="button'" onclick= "autoP() ">aP</button>
-</span>>
-<br>
-<textarea style="background - Color: black; color: green;" oninput="previewMe ()" id="d1"
-name="data1" cols="5e" rows= "20"><!--DATA1 GOES HERE--></textarea>
+  <input id="f1" type="text" size= "50" name="filename1" value="<! - - FILE1 GOES HERE- - > ">
+  <button type="button" onclick="mysave () ">Save</button>
+  <br>
+  <span>
+  <button type="button" onclick="myFormat('h1')">H1</button>
+  <button type="button" onclick="myFormat('h2')">H2</button>
+  <button type="button" onclick="myFormat('h3')">H3</button>
+  <button type="button" onclick="myFormat('h4')">H4</button>
+  <button type="button" onclick="myFormat('h5')">H5</button>
+  <button type="button" onclick="myFormat('h6')">H6</button>
+  <button type="button" onclick="myFormat('strong')">B</button>
+  <button type="button" onclick="myFormat('red')">Red</button>
+  <button type="button" onclick="myFormatList('ul')">UL</button>
+  <button type="button" onclick="myFormatList('ol')">OL</button>
+  <button type="button" onclick="justATag('link')">Link</button>
+  <button type="button" onclick="justATag('image')">Img</button>
+  <button type="button" onclick="justATag('il')">I/L</button>
+  <button type="button" onclick="myFormat('p')">P</button>
+  <button type="button" onclick="autoP()">aP</button>
+  </span>
+  <br>
+  <textarea style="background-color: black; color: green;" oninput="previewMe()" id="d1" name="data1" cols="50" rows="20"><!--DATA1 GOES HERE--></textarea>
 </form>
 </div>
-<div id="preview1" style="float: left; width: 35%; min-height: 500px; background - color:
-#5697b3; ">
-<button type="button " onclick="previewMe () ">Sync</button>
+<div id="preview1" style="float: left; width: 35%; min-height: 500px; background - color: #5697b3;">
+<button type="button " onclick="previewMe() ">Sync</button>
 <div id="preview2"></div>
 </div>
-<span id="status1">, . . </span>
+<span id="status1">...</span>
 <!--ERROR GOES HERE-->
 </body>
 </html>
