@@ -74,10 +74,10 @@ function myFormat(tag, input) {
 }
 
 function myFormatList(tag, input) {
-    newstring =document.getElementById ( "d1").value // keep it the same
+    newString =document.getElementById("d1").value // keep it the same
     a = document.getElementById("d1").value.slice(0, document.getElementById("d1").selectionStart)
     b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd)
-    c = document.getElementById("d1").value.slice(document.getElementById ("di").selectionEnd)
+    c = document.getElementById("d1").value.slice(document.getElementById ("d1").selectionEnd)
 
     var b = b.replace(/\n/gm, "</li>\n    <li>");
     var b = b.replace(/^/, "    <li>");
@@ -100,20 +100,20 @@ function justATag(tag) {
     a = document.getElementById("d1").value.slice(0, document.getElementById("d1").selectionStart)
     b = document.getElementById("d1").value.slice(document.getElementById("d1").selectionStart, document.getElementById("d1").selectionEnd)
     c = document.getElementById("d1").value.slice(document.getElementById("d1").selectionEnd)
-    if (tag = "link")
+    if (tag == "link")
         newString = a + "<a href=\"\"></a>" + c
     else if (tag == "image")
-        newString = a +"<img src=\"\" alt=\"\">" + c
+        newString = a + "<img src=\"\" alt=\"\">" + c
     else if (tag == "il")
         newString = a + "<a href=\"\"><img src=\"\" alt=\"\"></a>" + c
     document.getElementById("d1").value = newString
 }
 
-function autoP (){
-    newstring = document.getElementById("d1").value // keep it the same
-    newstring = newstring.replace(/\n[a-zA-Z0-9 ]{100,}\n/gm, function(m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
-    newstring = newstring.replace(/^[a-zA-Z0-9 ]{100,}\n/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
-    newstring = newstring.replace(/\n[a-zA-Z0-9 ]{100,}$/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+function autoP(){
+    newString = document.getElementById("d1").value // keep it the same
+    newString = newString.replace(/\n[a-zA-Z0-9 ]{100,}\n/gm, function(m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+    newString = newString.replace(/^[a-zA-Z0-9 ]{100,}\n/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
+    newString = newString.replace(/\n[a-zA-Z0-9 ]{100,}$/g, function (m) { m = m.replace(/\n/g, ""); return '\n<p>' + m + '</p>\n';});
     document.getElementById("d1").value = newString
 }
 
